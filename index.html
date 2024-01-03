@@ -1,0 +1,102 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--LOGIN-->
+<script src="scripts/credentials.js"></script>
+<link rel="stylesheet" href="styles/all.css">
+
+<div class="bg-image"></div>
+
+
+<div class="bg-text">
+  <div class="container">
+    <!--<img src="logo.png" style="width:55px;height:50px;">-->
+    <img src="ns-x (2).png" style="width:45px;height:auto;">
+    <p style="font-size: 14px;">NEXUSSNARL-X</p>
+    <hr class="solid" color="#333333">
+    <br>
+    <label style="font-size: 10px;">USERNAME</label><br>
+    <input type="text" placeholder="Username" id="username" required><br>
+    <label style="font-size: 10px;">PASSWORD</label><br>
+    <input type="password" placeholder="Password" id="password" required><br>
+    <p id="loginResponse" style="font-size: 13px;">(⌐■_■)</p>
+
+    <button class="Loginbutton" onclick="login()">LOGIN</button>
+    <br>
+    <br>
+    <p style="font-size: 10px;">NAFANEEL.UK SEP-23</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+<style>
+  .container {
+    padding: 25px;
+  }
+
+  .Loginbutton {
+
+    background-color: #2e2e2e;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    height: 45px;
+    padding: 0px;
+    width: 100%;
+    color: #ffffff;
+    padding: 15px;
+    margin: 0px;
+    border: none;
+    border: 2px grey;
+    cursor: pointer;
+
+  }
+
+  .Loginbutton:hover {
+    opacity: 0.8;
+    background-color: #3a3a3a;
+  }
+
+
+  input[type=text],
+  input[type=password] {
+    text-align: center;
+    background-color: #2e2e2e;
+    color: #fff;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 2px grey;
+    box-sizing: border-box;
+  }
+
+  a.my-button {
+    background: linear-gradient(to right, #19ca4f, #18bb03);
+    background-color: #19ca4f;
+    color: #fff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 3px 100px;
+    border: 0px solid #000;
+    border-radius: 0px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px #2D2D2D;
+    text-shadow: 1px 1px 4px #000;
+  }
+
+  a.my-button:hover {
+    background: linear-gradient(to right, #54d06e, #54c351);
+    background-color: #54d06e;
+  }
+
+  a.my-button:active {
+    transform: scale(0.95);
+  }
+</style>

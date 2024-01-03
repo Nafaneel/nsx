@@ -1,0 +1,173 @@
+html,
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #232323;
+}
+
+
+
+
+.bg-image {
+  /* The image used */
+  /* background-image: url("https://wallpaperaccess.com/full/3949372.jpg"); 
+  /* https://img.freepik.com/free-vector/dark-carbon-fiber-texture-pattern-background_1017-37140.jpg */
+  /*background-image: url("https://img.freepik.com/premium-vector/green-arrow-dark-grey-shadow-line-design-background-geometric-overlap-layer-paper-cut-style_252051-3480.jpg"); */
+  /* background-image: url("https://wallpapercave.com/wp/wp2725641.png");*/
+
+  /* background-image: url("https://cdn.dribbble.com/users/707385/screenshots/3926398/4_1_2.gif"); */
+
+  /*background-image: url('../bill-bg.jpg');*/
+
+  background: linear-gradient(90deg, rgba(48, 48, 48, 1) 0%, rgba(54, 54, 54, 1) 50%, rgba(51, 51, 51, 1) 100%);
+
+
+  /* Add the blur effect */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  padding: 10px;
+  text-align: center;
+
+  border: 1px solid #4d4d4d;
+}
+
+.main {
+  opacity: 0;
+  animation-name: mainPage;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes mainPage {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+.explodeExit {
+  opacity: 1;
+  animation-name: exit;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes exit {
+  0% {
+    opacity: 1;
+    scale: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+    scale: 1.5;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+}
+
+
+.pushed {
+  opacity: 1;
+  animation-name: pushedA;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes pushedA {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  20% {
+    opacity: 0;
+    scale: 1.5;
+  }
+
+  100% {
+    opacity: 0.8;
+    scale: 0.1;
+  }
+}
+
+.fadeIn {
+
+  animation-name: fadeIn1;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes fadeIn1 {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+.countDown {
+
+  animation-name: countDown1;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes countDown1 {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

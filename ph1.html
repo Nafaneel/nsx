@@ -1,0 +1,272 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles/all.css">
+<link rel="stylesheet" href="popups/popups.css">
+
+<div class="bg-image"></div>
+
+<body class="notify_off">
+  <div class="bg-text">
+    <div id="bodyBlur">
+      <div class="indexing">
+        <span onclick="redirectUsr('home.html')">
+          <!--<img src="home.png" style="width:20px;height:20px; position: absolute; left: 20%; padding-top: 5%;">-->
+          <!--<img src="logo.png" style="width:45px;height:40px;">-->
+          <img src="ns-x (2).png" style="width:45px;height:auto;">
+          <p class="coolLogo" style="font-size: 10px; text-shadow: 0 0 5px #fff, 0 0 15px #fff;">NEXUSSNARL-X</p>
+
+        </span>
+        <hr color="0, 0, 0, 0.4">
+
+        <span>
+          <p style="font-size: 11px; background-color: rgba(50, 50, 50, 0.7); border-radius: 3px;">
+            <i>
+              <b id="userShow">NAFANEEL</b>&nbsp&nbsp|&nbsp&nbsp
+              <b id="time">NexusSnarl-X</b>&nbsp&nbsp
+            </i>
+          </p>
+        </span>
+        <br>
+        <div class="infoBox">
+          <p style="font-size: 9px; margin: 1px; font-weight: bold; color: lime;"><b>SYSTEM DETAILS</b></p>
+          <p style="font-size: 8px;"><b>LINKED NETWORK:</b> <i id="infoNetwork" style="color: lightblue;">GRANGE</i></p>
+          <p style="font-size: 8px;"><b>ACCESS LEVEL:</b> <i id="infoVersion" style="color: yellowgreen;">ADMIN</i></p>
+          <p style="font-size: 8px;"><b>DAILY QUOTA [REMAINING]:</b> <i id="infoVersion"
+              style="color: indianred;">100</i>
+          </p>
+        </div>
+
+        <div class="tokensBox" onclick="update_tokens()">
+          <p id="tokensShow"
+            style="font-size: 16px; color: lime; margin: 0px; margin-top: 10px; text-shadow: 0 0 2px #a7ff59;">Fetching
+            Tokens...</p>
+          <p style="font-size: 12px; color: #787878; margin: 0px; margin-bottom: 10px;">COSTS 1x TOKEN [1TPC]</p>
+        </div>
+
+        <br>
+
+
+        <div class="mainBox">
+          <div class="selectBox">
+            <p style=" text-shadow: 0 0 5px #fff">SELECT SOUND:</p>
+            <select width="20%" id="userSoundSelect" style="font-size: 13px; text-align: center;"></select><br><br>
+          </div>
+          <div>
+            <label onclick="alert('The delay between sending command and then transmitting, In seconds')"
+              style="font-size: 12px;"><b>DELAY</b> <i>[S]</i></label>
+            <input id="delayBox" width="1" maxlength="3" size="3" value="0" type=text style="text-align: center;">
+          </div>
+          <br>
+          <a class="sendCom" href="#" onclick="trigger_send()">SEND COMMAND</a>
+          <br><br>
+        </div>
+
+
+        <!--
+        <br><br>
+        <p style="font-size: 12px; color: #787878">Previous Commands</p>
+        <p id="log" style="font-size: 12px; color: #787878">[00:00:00] - NULL</p>
+        <p id="log" style="font-size: 12px; color: #787878">[00:00:00] - NULL</p>
+        -->
+
+
+        <br><br><br>
+
+
+        <p style="font-size: 8px;  text-shadow: 0 0 5px #fff, 0 0 15px #fff">NexusSnarl-X© | Nafaneel™ | 21-Sep-23 </p>
+      </div>
+    </div>
+
+
+    <!--POPUPS------------------------------------------------------------------------------>
+
+    <div id="popup" class="sent1">
+      <center><img height="60" width="60" src="popups/done.gif"></center>
+
+      <h3>SENT!</h3>
+    </div>
+
+
+
+    <!--ERROR POPUP-->
+    <div id="popup2" class="sent1">
+      <center><img height="60" width="60" src="popups/error.gif"></center>
+
+      <h3>ERROR!</h3>
+      <hr>
+      <p>error message</p>
+      <button onclick="clearError()">CLOSE MESSAGE</button>
+    </div>
+  </div>
+</body>
+
+
+<script src="scripts/credentials.js"></script>
+<script src="scripts/tokens.js"></script>
+<script src="scripts/cypher.js"></script>
+<script src="scripts/soundsGet.js"></script>
+<script src="scripts/sendCommand.js"></script>
+<script src="popups/popups.js"></script>
+<script src="scripts/redirect.js"></script>
+
+
+<script>
+
+  function refreshTime() {
+    const timeDisplay = document.getElementById("time");
+    const dateString = new Date().toLocaleString();
+    const formattedString = dateString.replace(", ", " - ");
+    timeDisplay.textContent = formattedString;
+  }
+  setInterval(refreshTime, 1000);
+
+  var params = details();
+  var user = hexToString(params.usr);
+  var gid = hexToString(params.gid);
+  document.getElementById('userShow').innerHTML = `Welcome <b>${user}</b>`;
+  console.log(user);
+
+  function update_tokens() {
+    document.getElementById("tokensShow").innerHTML = `Fetching ${user}'s Tokens...`;
+    get_tokens(gid, user);
+  }
+
+
+  get_tokens(gid, user);
+
+
+  soundsFetch(gid);
+
+
+
+  function trigger_send() {
+    var GID = gid;
+    var USR = user;
+
+    var e = document.getElementById("userSoundSelect");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    var SOUND = text;
+    var DELAY = document.getElementById('delayBox').value;
+
+    send_command(GID, USR, SOUND, DELAY);
+    sent();
+  }
+
+
+
+
+</script>
+
+<style>
+  @keyframes logo {
+    0% {
+      text-shadow: 0 0 5px #4287f5, 0 0 15px #75a8fa;
+    }
+
+    20% {
+      text-shadow: 0 0 5px #32fc39, 0 0 15px #75fa7a;
+    }
+
+    40% {
+      text-shadow: 0 0 5px #fcf232, 0 0 15px #fff87a;
+    }
+
+    60% {
+      text-shadow: 0 0 5px #fa6d1b, 0 0 15px #ffab7a;
+    }
+
+    ,
+    80% {
+      text-shadow: 0 0 5px #921bfa, 0 0 15px #bf79fc;
+    }
+
+    100% {
+      text-shadow: 0 0 5px #fc1e98, 0 0 15px #fc79c1;
+    }
+  }
+
+  .coolLogo {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff;
+    animation-name: logo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+  }
+
+
+  .infoBox {
+    background-color: rgba(68, 69, 68, 0.1);
+    height: auto;
+
+    /* margin-inline: 40px; */
+    margin-bottom: 30px;
+    border: 2px solid #424242;
+    border-radius: 4px;
+  }
+
+  .mainBox {
+    background-color: rgba(68, 69, 68, 0.1);
+
+    height: auto;
+
+    border: 2px solid #424242;
+    /*border: 1px solid orange;*/
+
+    border-radius: 4px;
+
+    /*margin-inline: 40px;*/
+  }
+
+  .tokensBox {
+    background-color: rgba(68, 69, 68, 0.1);
+    height: auto;
+
+    /* margin-inline: 20px;*/
+    border: 0.5px solid lime;
+    border-radius: 4px;
+
+    /*
+    margin-bottom: 30px;
+    
+    border-radius: 4px;
+    */
+  }
+
+  .indexing {
+    z-index: 100;
+  }
+
+  select,
+  input {
+    background-color: #303030;
+    color: #fff;
+    border-radius: 2px;
+  }
+
+  a.sendCom {
+    background: linear-gradient(to right, #47b531, #27c208);
+    background-color: #ca5d19;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 4px 41px;
+    border: 0px solid #000;
+    border-radius: 3px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px #2D2D2D;
+    text-shadow: 1px 1px 6px #000;
+  }
+
+  a.sendCom:hover {
+    background: linear-gradient(to right, #c2a908, #dec83c);
+    background-color: #d07854;
+  }
+
+  a.sendCom:active {
+    transform: scale(0.95);
+  }
+</style>

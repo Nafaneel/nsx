@@ -1,0 +1,120 @@
+a.ph1-button {
+  margin: 5px;
+  background: linear-gradient(to right, #19ca86, #209806);
+  background-color: #19ca86;
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 6px 70px;
+  border: 0px solid #000;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0px 0px 10px 0px #2D2D2D;
+  text-shadow: 1px 1px 0px #000;
+
+  width: 45%;
+  margin-inline: 1%;
+}
+
+a.ph1-button:hover {
+  background: linear-gradient(to right, #54d097, #56a551);
+  background-color: #54d097;
+}
+
+a.ph1-button:active {
+  transform: scale(0.95);
+}
+
+a.ph2-button {
+  margin: 5px;
+  background: linear-gradient(to right, #caa919, #983f06);
+  background-color: #caa919;
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 6px 70px;
+  border: 0px solid #000;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0px 0px 10px 0px #2D2D2D;
+  text-shadow: 1px 1px 0px #000;
+
+  width: 45%;
+  margin-inline: 3px;
+
+}
+
+a.ph2-button:hover {
+  background: linear-gradient(to right, #d0b354, #a56451);
+  background-color: #d0b354;
+}
+
+a.ph2-button:active {
+  transform: scale(0.95);
+}
+
+a.ph2-button2 {
+  margin: 5px;
+  background: linear-gradient(to right, #1965ca, #066d98);
+  background-color: #1965ca;
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 6px 70px;
+  border: 0px solid #000;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0px 0px 10px 0px #2D2D2D;
+  text-shadow: 1px 1px 0px #000;
+
+  width: 45%;
+  margin-inline: 1%;
+}
+
+a.ph2-button2:hover {
+  background: linear-gradient(to right, #547dd0, #5183a5);
+  background-color: #547dd0;
+}
+
+a.ph2-button2:active {
+  transform: scale(0.95);
+}
+
+a.tokens-admin {
+  margin: 5px;
+  background: linear-gradient(to right, #2b2b2b, #3f3f3f);
+  background-color: #2b2b2b;
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 6px 70px;
+  border: 0px solid #000;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0px 0px 10px 0px #2D2D2D;
+  text-shadow: 1px 1px 0px #000;
+
+  width: 45%;
+  margin-inline: 1%;
+}
+
+a.tokens-admin:hover {
+  background: linear-gradient(to right, #5a5a5a, #646464);
+  background-color: #5a5a5a;
+}
+
+a.tokens-admin:active {
+  transform: scale(0.95);
+}

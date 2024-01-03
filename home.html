@@ -1,0 +1,164 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles/all.css">
+<link rel="stylesheet" href="styles/home.css">
+<div class="bg-image">
+</div>
+
+<div hidden>
+  <img style="position: absolute; top: -10%; left: 0%; width: 100%; height: auto; opacity: 0.2;"
+    src="https://t3.ftcdn.net/jpg/05/26/67/46/360_F_526674656_IMhb12SrZLT7yooQRdJfkqpbLTK063Gf.png">
+  <img src="decorations/steven.png"
+    style="position: absolute; bottom: 0%; left: 0%; width: 20%; height: auto; opacity: 0.2;">
+  <img src="decorations/bruno.png"
+    style="position: absolute; bottom: 0%; left: 25%; width: 20%; height: auto; opacity: 0.2;">
+  <img src="decorations/neil.png"
+    style="position: absolute; bottom: 0%; left: 45%; width: 20%; height: auto; opacity: 0.2;">
+  <img src="decorations/fred.png"
+    style="position: absolute; bottom: 0%; left: 65%; width: 20%; height: auto; opacity: 0.2;">
+  <img src="decorations/bill.png"
+    style="position: absolute; bottom: 0%; left: 85%; width: 17%; height: auto; opacity: 0.2;">
+</div>
+
+
+<div class="bg-text">
+
+
+  <span onclick="logout()">
+    <!--<img src="home.png" style="width:20px;height:20px; position: absolute; left: 20%; padding-top: 5%;">-->
+    <!--<img src="logo.png" style="width:45px;height:40px;">-->
+    <img src="ns-x (2).png" style="width:45px;height:auto;">
+    <p class="coolLogo" style="font-size: 10px; text-shadow: 0 0 5px #fff, 0 0 15px #fff;">NEXUSSNARL-X</p>
+
+  </span>
+  <hr color="0, 0, 0, 0.4">
+  <p style="font-size: 10px;" id="welcomeUser"></p>
+
+  <div class="warning">
+    <p><b style="font-size: 10px;">⚠</b><i style=" font-size: 10px;">This application Is still in development and
+        all
+        functionality may not be complete.</i></p>
+  </div>
+
+  <div class="TX">
+    <div class="phase1">
+      <img src="banner.png"
+        style="width: 87%; height: auto; margin: 0%; opacity: 0.1; position: absolute; left: 20px; z-index: -90;">
+      <p style="font-size: 10px;"><b>PHASE 1</b></p>
+      <a class="ph1-button" onclick="redirectUsr('ph1.html')" href="#">PHASE 1</a>
+    </div>
+
+    <div class="phase2">
+      <p style="font-size: 11px;">PHASE-2</p>
+      <a class="ph2-button" href="#">PHASE 2</a>
+      <a class="ph2-button2" href="#">SLT ASSISTANCE</a>
+    </div>
+
+    <div class="admin">
+      <p style="font-size: 11px;">GID ADMIN FEATURES</p>
+      <a class="tokens-admin" href="#">Token Admin</a>
+    </div>
+  </div>
+  <p style="font-size: 8px;  text-shadow: 0 0 5px #fff, 0 0 15px #fff">NexusSnarl-X© | Nafaneel™ | 21-Sep-23 </p>
+</div>
+
+<style>
+  .phase1 {
+    background-color: rgba(152, 245, 66, 0.05);
+    margin: 4px;
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  .phase2 {
+    background-color: rgba(245, 135, 66, 0.1);
+    margin: 4px;
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  .admin {
+    background-color: rgba(2, 98, 171, 0.1);
+    margin: 4px;
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  .warning {
+    background-color: rgba(68, 69, 68, 0.1);
+    height: auto;
+    margin: 0px;
+    /* margin-inline: 40px; */
+    margin-bottom: 15px;
+    border: 1px solid #ab7e02;
+    border-radius: 4px;
+  }
+
+  .TX {
+    background-color: rgba(68, 69, 68, 0.0.5);
+    height: auto;
+    padding: 3px;
+    /* margin-inline: 40px; */
+    margin-bottom: 30px;
+    border: 1px solid #424242;
+    border-radius: 4px;
+  }
+
+  @keyframes logo {
+    0% {
+      text-shadow: 0 0 5px #4287f5, 0 0 15px #75a8fa;
+    }
+
+    20% {
+      text-shadow: 0 0 5px #32fc39, 0 0 15px #75fa7a;
+    }
+
+    40% {
+      text-shadow: 0 0 5px #fcf232, 0 0 15px #fff87a;
+    }
+
+    60% {
+      text-shadow: 0 0 5px #fa6d1b, 0 0 15px #ffab7a;
+    }
+
+    ,
+    80% {
+      text-shadow: 0 0 5px #921bfa, 0 0 15px #bf79fc;
+    }
+
+    100% {
+      text-shadow: 0 0 5px #fc1e98, 0 0 15px #fc79c1;
+    }
+  }
+
+  .coolLogo {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff;
+    animation-name: logo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+  }
+</style>
+
+
+<script src="scripts/credentials.js"></script>
+<script src="scripts/redirect.js"></script>
+<script src="scripts/permissions.js"></script>
+<script src="scripts/cypher.js"></script>
+<script>check_login()</script>
+<script>var params = details();
+  var user = hexToString(params.usr);
+  var gid = hexToString(params.gid);
+  get_perms(gid, user);
+  document.getElementById('welcomeUser').innerHTML = `Welcome, ${user}`;
+
+  //var permissions = get_perms(gid, user);
+  //var perms = JSON.stringify(permissions);
+</script>
+<style>
+  button {
+    background-color: #333332;
+    color: #ffffff;
+    margin: 10px;
+  }
+</style>

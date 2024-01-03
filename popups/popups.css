@@ -1,0 +1,157 @@
+.sent1 {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(100, 100, 100, 0.8);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+  width: 45%;
+  padding: 10px;
+  text-align: center;
+  animation-name: activateOut;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.sent {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(100, 100, 100, 0.8);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  z-index: -1;
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+  width: 45%;
+  padding: 10px;
+  text-align: center;
+  animation-name: activateIn;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.update1 {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 45%;
+  padding: 10px;
+  text-align: center;
+  animation-name: activateOut;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.update {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 45%;
+  padding: 10px;
+  text-align: center;
+  animation-name: activateIn;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.notify_off {
+  filter: blur(0px);
+  animation-name: deactivateBlur;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.notify_on {
+  /* filter: blur(0px); */
+  animation-name: activateBlur;
+  animation-duration: 500ms;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes activateBlur {
+  0% {
+    filter: blur(0px);
+  }
+
+  10% {
+    filter: blur(15px);
+  }
+
+  100% {
+    filter: blur(15px);
+  }
+}
+
+@keyframes deactivateBlur {
+  0% {
+    filter: blur(15px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes activateIn {
+  0% {
+    opacity: 0;
+    top: 110%;
+  }
+
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+@keyframes activateOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
